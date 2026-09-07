@@ -1,5 +1,3 @@
-"""Documentation - Installation Guide"""
-
 # Installation Guide
 
 ## System Requirements
@@ -26,7 +24,7 @@ source venv/bin/activate
 
 # Windows
 python -m venv venv
-venv\Scripts\activate
+venv\\Scripts\\activate
 ```
 
 ## Step 3: Install Python Dependencies
@@ -128,8 +126,8 @@ Server will start at `http://localhost:8000`
 docker build -t 3d-character-agent .
 
 # Run container
-docker run -d -p 8000:8000 \
-  -v output:/app/output \
+docker run -d -p 8000:8000 \\
+  -v output:/app/output \\
   3d-character-agent
 ```
 

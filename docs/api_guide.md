@@ -1,5 +1,3 @@
-"""Documentation - API Guide"""
-
 # API Guide
 
 ## Base URL
@@ -43,7 +41,7 @@ Create a new 3D character.
   "id": "a1b2c3d4e5f6",
   "name": "hero",
   "status": "ready",
-  "params": { ... },
+  "params": { },
   "files": {
     "blend": "/output/characters/hero_base.blend",
     "fbx": null,
