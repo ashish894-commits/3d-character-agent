@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  3d-character-agent:
+    build: .
+    container_name: 3d-character-agent
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./output:/app/output
+      - ./cache:/app/cache
+      - /tmp/3d-agent:/tmp/3d-agent
+    environment:
+      - BLENDER_GPU_ENABLED=false
+      - RENDER_ENGINE=CYCLES
+      - RENDER_SAMPLES=128
+      - RENDER_RESOLUTION=1920x1080
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - LOG_LEVEL=INFO
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: Nginx reverse proxy
+  nginx:
+    image: nginx:alpine
+    container_name: 3d-agent-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - 3d-character-agent
+    restart: unless-stopped
