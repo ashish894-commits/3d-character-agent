@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Output directories
+output/
+cache/
+/tmp/
+*.tmp
+
+# Blender files
+*.blend
+*.blend1
+*.blend2
+*.bak
+
+# Render outputs
+*.png
+*.jpg
+*.jpeg
+*.exr
+*.mp4
+*.mov
+*.avi
+
+# Test coverage
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Logs
+*.log
+logs/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
